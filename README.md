@@ -19,6 +19,7 @@
   - 9:40 Макет у Figma (F1–F2), T-10 — Салтикова Юлія
   - 12:08 Зв'язки прототипу, експорт, аудит G6, T-09 — Ходус Данило
   - 13:27 Підсумки та межі перевіреного — Кузнецов Герман
+- 💬 **Чат з ChatGPT (промпти G1–G5 та відповіді):** [Mini Issue Tracker — UX/UI Design Input Pack](https://chatgpt.com/share/6aeddc09-ec1c-83ed-9e23-cc18f325080c)
 - 🎨 **Робочий Figma-проєкт (Design & Prototype):**  
   [Figma File: Mini Issue Tracker UX/UI](https://www.figma.com/design/OFbkJ1FsixY8G3CYzEsEsH/Mini-Issue-Tracker-UX-UI)  
   *(Надано права перегляду «Can view»; робоча сторінка: `Page 1`; стартова точка прототипу: `Issues flow` на `S-02-A`)*.
