@@ -23,6 +23,7 @@
 - 🎨 **Робочий Figma-проєкт (Design & Prototype):**  
   [Figma File: Mini Issue Tracker UX/UI](https://www.figma.com/design/OFbkJ1FsixY8G3CYzEsEsH/Mini-Issue-Tracker-UX-UI)  
   *(Надано права перегляду «Can view»; робоча сторінка: `Page 1`; стартова точка прототипу: `Issues flow` на `S-02-A`)*.
+- ▶️ **Клікабельний прототип (Figma, перегляд без входу):** [Відкрити прототип](https://www.figma.com/proto/OFbkJ1FsixY8G3CYzEsEsH/Mini-Issue-Tracker-UX-UI?node-id=3-5130&starting-point-node-id=3%3A5130&scaling=scale-down)
 - 📦 **Локальний бекап макетів до правок:** `04_design/BEFORE_REVIEW.fig`
 - 📸 **Експортовані скріншоти (2x PNG):** `04_design/screenshots/`
 
@@ -43,11 +44,12 @@
 ## 🚀 Інструкція з перевірки та тестування
 
 1. **Перегляд документації:** Перевірте артефакти у папках `01_requirements/`–`05_qa/`.
-2. **Запуск прототипу:** Відкрийте посилання на [Figma-проєкт](https://www.figma.com/design/OFbkJ1FsixY8G3CYzEsEsH/Mini-Issue-Tracker-UX-UI) та натисніть кнопку **Present (Play)**.
+2. **Запуск прототипу:** Відкрийте [Figma-проєкт](https://www.figma.com/design/OFbkJ1FsixY8G3CYzEsEsH/Mini-Issue-Tracker-UX-UI) і натисніть **Present (▶)** у правому верхньому куті. Переходи між екранами задано у вкладці **Prototype** (flow «Issues flow», старт — `S-02-A`). Зручніше відкривати окреме посилання на прототип (Share → Prototype).
 3. **Проходження сценаріїв:**
    - Натисніть таб **Important** для переходу на фільтрований список `S-02-B`.
    - Натисніть кнопку **+ Create Issue** для відкриття модального вікна `M-01`.
-   - Клікніть на будь-яку заявку у списку для переходу на сторінку деталей `S-03`.
+   - Клікніть на заявку у списку для переходу на сторінку деталей `S-03`.
+   - У модальному вікні `M-01` перевірте `Cancel` і клік по затемненому фону (закривають вікно без створення).
    - На сторінці деталей випробуйте кнопку **← Return to Issues List**.
 
 ---
@@ -68,9 +70,15 @@ mini-issue-tracker-ux-ui/
 ├── 04_design/
 │   ├── BEFORE_REVIEW.fig          # Автономний файл-знімок макета Figma після F1
 │   ├── 06_Review_Report.md        # Звіт підсумкового аудиту за PNG (ChatGPT Free + Контроль D)
-│   └── screenshots/               # Експортовані екрани: S-01, S-02-A, S-02-B, S-02-C, M-01, S-03
+│   └── screenshots/               # Експорти кадрів Figma: S-01, S-02-A/B/C, M-01, S-03, S-03 нової issue, reference-кадри REF_*
 └── 05_qa/
     ├── AI_Interaction_Log.md      # Журнал взаємодії з ChatGPT Free та Figma Agent (Додаток B2)
-    ├── Defect_Change_Log.md       # Журнал виявлення та закриття дефектів DEF-01..16 та UX-01..05
-    └── Test_Cases_T01_T10.md      # Протокол проходження тестів прототипу у Figma Present (100% PASS)
+    ├── Defect_Change_Log.md       # Журнал дефектів DEF-01..24 та UX-01..05; відкриті дефекти позначено OPEN
+    └── Test_Cases_T01_T10.md      # Протокол тестів T-01..T-10: PASS / PARTIAL / FAIL / NOT RUN за наявними доказами
 ```
+
+---
+
+## Стан після зауважень викладача
+
+Зауваження з автоматичного ревью враховано в документах: журнал виправлень узгоджено з контрактами, ідентифікатори рішень розділено (D-xx у `Decision_Log.md`, DP-xx у `03_Screen_Contracts.md`), тести переписано за вимогами методички. У Figma-макеті виправлено результат `Create` (відкривається нова issue ISS-106), кожен рядок списку відкриває свою issue, додано приклад Critical + Open (ISS-107) у Important, замінено плейсхолдери й застарілі примітки, експортовано reference-кадри як докази. Повторну перевірку T-01…T-10 виконано 24.11.2026 (результати — у `05_qa/Test_Cases_T01_T10.md`). Усі дефекти реєстру закриті (`05_qa/Defect_Change_Log.md`); рішення D-09 і D-10 затверджено командою (`Decision_Log.md`, 2026-11-24).
