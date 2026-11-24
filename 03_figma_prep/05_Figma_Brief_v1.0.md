@@ -20,21 +20,22 @@ A neutral boundary block labeled “Authentication entry — mechanism TBD”. N
 ## S-02 — Issues List [US-02; US-05; US-08; D-01]
 Header: Issues List and Create Issue action. Tabs: All Issues / Important Issues. Rows show ID, Title, Status, Priority, Assignee if assigned. Title opens details. No row-selection checkboxes.
 
-Show S-02-A All Issues, S-02-B Important Issues and S-02-C Empty. These are states of ONE product screen. They may use separate frames for demonstration. Empty All Issues means zero registered issues.
+Show S-02-A All Issues, S-02-B Important Issues and S-02-C Empty. These are states of ONE product screen. They may use separate frames for demonstration. Empty All Issues means zero registered issues (demonstration copy: "No issues yet."). Empty Important means issues exist but none matches the Important rule (demonstration copy: "No important issues found."); it is the same S-02 list state, not a new screen.
 
 Important = (priority is High or Critical) AND status != Closed. Resolved High/Critical issues stay included. Low, Normal, unset priority and every Closed issue are excluded. Reuse the same issue IDs/data across list states.
 
-Sample rows:
-- ISS-001 Open / Critical / Member A
-- ISS-002 In Progress / High / Member B
-- ISS-003 Resolved / High / Member A
-- ISS-004 Closed / Critical / Member B
-- ISS-005 Open / Normal / unassigned
-- ISS-006 Open / Not Set / unassigned
-- ISS-007 Resolved / Critical / Lead
-- ISS-008 In Progress / Low / Member A
+Sample rows (v1.1 — the fixture set actually used in the Figma mockup and prototype):
+- ISS-101 Resolved / High / Member A
+- ISS-102 Closed / Critical / Member B
+- ISS-103 Open / Not Set / unassigned
+- ISS-104 In Progress / Normal / Member A
+- ISS-105 Open / Low / Member B
+- ISS-106 Open / Not Set / unassigned — prepared new-issue result after Create [D-10]
+- ISS-107 Open / Critical / Member B
 
-Important contains ISS-001, ISS-002, ISS-003 and ISS-007 only.
+Important contains ISS-101 and ISS-107 only (ISS-106 is shown only as the post-create result).
+
+> v1.0 of this brief listed an illustrative set ISS-001…ISS-008. The mockup was built with ISS-101…ISS-105 and extended on 2026-11-24 with ISS-106 (Create result, D-10) and ISS-107 (Critical + Open, so that the Critical branch of the Important rule is visible). The Important rule itself is unchanged.
 
 ## M-01 — Create Issue overlay [US-01; D-01/04]
 Inputs: Title, required; Description, required multiline. Actions: Create and Cancel. Only these two issue fields are editable here.
@@ -46,7 +47,7 @@ Show default, missing-Title and missing-Description examples. Invalid submission
 ## S-03 — Issue Details [US-02–US-07]
 Show ID, Title, Description, Status, Priority, Assignee, Author, Created at. Unassigned/Not Set are empty-value display states, not extra metadata. Provide Return to Issues List.
 
-Keep Assignee, Priority and Status controls together without a decorative “Control Actions Area” heading. Do not duplicate editable and read-only versions of the same value unnecessarily. Canonical example: Lead viewing ISS-003 assigned to Member A; assignment and priority enabled, status disabled.
+Keep Assignee, Priority and Status controls together without a decorative “Control Actions Area” heading. Do not duplicate editable and read-only versions of the same value unnecessarily. Canonical examples: Lead viewing unassigned ISS-103 — assignment and priority enabled, each with an Apply action (`Reference · Permissions and controls`); Lead who is not the assignee viewing ISS-105 — status controls disabled (`S-03 · Team Lead non-assignee`).
 
 Only Lead can assign/reassign one team member and set/change priority [US-03; BR-06; D-04]. Member controls are disabled [D-05]. Selection is applied with an Apply action adjacent to that control; the visible result remains on S-03 [D-06].
 
