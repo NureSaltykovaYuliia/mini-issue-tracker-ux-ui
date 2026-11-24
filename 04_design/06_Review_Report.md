@@ -43,7 +43,7 @@
 | AC-08.2 | NV (прогалина даних) | PASS | прототип | ISS-107 Critical + Open у Important (`REF_important_fixtures.png`) |
 | D-03, UX-01 | PARTIAL | PASS | макет | `Not Set` / `Unassigned` замість `[ ]` |
 | D-05 | PARTIAL | PASS | макет | disabled або текстовий вигляд заборонених контролів (D-05 допускає обидва) |
-| D-07 | FAIL | PARTIAL | прототип | цільова поведінка погоджена (D-07); у прототипі `Return` → S-02-A — задокументоване обмеження Starter (DEF-14) |
+| D-07 | FAIL | PASS | прототип | Return веде до списку, з якого відкрито issue: All → S-02-A, Important → S-02-B (кадри `from Important`, DEF-14 закрито); `S-03_ISS-107_from_Important.png` |
 | UX-03 / DEF-12 | дефект | закрито | прототип | `Cancel` і клік по фону закривають M-01 (D-09) |
 | UX-04 | зауваження | закрито | макет | S-02-C показує `No issues yet.` (порожній All); випадок 02 у `REF_empty_error_cases.png` показує `No important issues found.` (порожній Important, той самий S-02-C). Тексти демонстраційні (Q-08) |
 | UX-05 | дефект | закрито | макет | підпис `Add Comment` |
@@ -61,8 +61,8 @@
 
 | Результат | 23.10.2026 | 24.11.2026 |
 | :--- | :--- | :--- |
-| PASS | 18 | 41 |
-| PARTIAL | 15 | 3 |
+| PASS | 18 | 42 |
+| PARTIAL | 15 | 2 |
 | NOT VERIFIABLE | 11 | 1 |
 | FAIL | 1 | 0 |
 

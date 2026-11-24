@@ -63,7 +63,7 @@ Show all four contexts: Member non-assignee; Member assignee; Lead non-assignee;
 Use compact components or annotated examples; do not create 16 complete detail screens. Visible annotations specify the test actor, issue ID and current status; they are not product controls or a role-switcher feature.
 
 ## Navigation intent [D-01/02/07/08]
-S-02 tabs switch list states; issue Title opens its S-03; Create Issue opens M-01; Cancel returns to the calling state; successful Create shows the prepared new issue S-03; Return restores the prior list state (prototype limitation allowed by D-07: Return may go to S-02-A). Assignment, priority, status and comments remain on S-03 after success. Invalid operations do not show a success state. These are design intentions, not working persistence.
+S-02 tabs switch list states; issue Title opens its S-03; Create Issue opens M-01; Cancel returns to the calling state; successful Create shows the prepared new issue S-03; Return restores the prior list state [D-07]: from S-02-A to S-02-A; from S-02-B via separate frames `S-03 · ISS-101/ISS-107 from Important` back to S-02-B. Assignment, priority, status and comments remain on S-03 after success. Invalid operations do not show a success state. These are design intentions, not working persistence.
 
 ## Exclusions
 No title/description editing after creation, deletion, attachments, AI features, dashboards, analytics, notifications, search, sorting, pagination, user administration, user-visible history, extra issue metadata, multi-assignee, extra status/priority values or transitions, invented login method, row selection, bulk actions, branding or decorative imagery. No separate product screens for assignment, priority, status, comments or Important Issues.
