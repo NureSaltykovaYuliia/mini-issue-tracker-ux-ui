@@ -2,7 +2,7 @@
 
 | Поле | Значення |
 | :--- | :--- |
-| Дата | 2026-10-23 |
+| Дата | 2026-10-23 (первинний аудит); 2026-11-24 (повторна перевірка, див. розділ нижче) |
 | Об'єкт перевірки | Figma-файл `OFbkJ1FsixY8G3CYzEsEsH` (сторінка `Page 1`), версія після ручного прототипування P1 |
 | Еталон | `03_figma_prep/05_Figma_Brief_v1.0.md`, `01_requirements/01_Input_Pack_v1.0.md`, `01_requirements/Decision_Log.md`, методичка §§17–21 |
 | Докази | 6 PNG у `04_design/screenshots/` (експорт 2x) + ручна перевірка prototype connections у вкладці Prototype |
@@ -10,6 +10,67 @@
 | Статус | Завершений звіт аудиту. Зауваження розглянуто та зафіксовано командою (Контроль D виконано) |
 
 > **Примітка щодо верифікації:** Звіт фіксує результати експертного аудиту візуальних контрактів та станів інтерфейсу (крок G6). Наскрізні сценарії взаємодії та поведінка переходів верифіковані вручну в режимі Present і задокументовані у протоколі `05_qa/Test_Cases_T01_T10.md`.
+
+## Повторна перевірка після виправлень (24.11.2026)
+
+Нижче — актуальний стан перевірки. Первинний аудит 23.10.2026 (розділи 0–C і Контроль D) **збережено без змін як історію**: він описує версію макета до правок викладача. Цей розділ показує, що змінилося.
+
+| Поле | Значення |
+| :--- | :--- |
+| Дата повторної перевірки | 2026-11-24 |
+| Версія макета | Figma `OFbkJ1FsixY8G3CYzEsEsH` («Mini Issue Tracker UX-UI»), стан після правок DEF-10, DEF-11, DEF-13, DEF-21, DEF-22 та створення кадрів `S-03 · New issue ISS-106 (after Create)`, `S-03 · Team Lead non-assignee (ISS-105)`, `S-03 · ISS-102…107 state` |
+| Докази | 13 PNG у `04_design/screenshots/`: `S-02-A…C`, `M-01`, `S-03`, `S-03_new_issue_after_create`, `S-03_lead_non_assignee`, `REF_permissions_4_contexts`, `REF_status_transitions`, `REF_empty_error_cases`, `REF_important_fixtures`, `REF_successful_creation_result` |
+| Прототип | Прохід у Present: список із 6 рядків (ISS-101…105, ISS-107); `Important` показує лише ISS-101 і ISS-107; рядок ISS-104 відкриває свою issue; `Return` → S-02-A; `Create` → ISS-106 (Open, Not Set, Unassigned); `Cancel` закриває M-01 без створення |
+| Виконавці | Ролі й відповідальні — у розд. 9 `05_qa/AI_Interaction_Log.md` |
+
+### Рівні доказу
+
+Кожен результат нижче має рівень: **макет** (поле, підпис, стан видно в кадрі або PNG), **прототип** (маршрут пройдено в Present) або **реалізація** (потребує коду, за картинкою не перевіряється).
+
+### Рядки, результат яких змінився
+
+| Source | Було (23.10) | Стало (24.11) | Рівень | Доказ |
+| :--- | :--- | :--- | :--- | :--- |
+| AC-01.2, AC-01.3 | PARTIAL | PASS | макет | `REF_empty_error_cases.png` (validation Title/Description) |
+| AC-01.4 | PARTIAL | PASS | прототип + макет | Create → ISS-106 (`S-03_new_issue_after_create.png`, `REF_successful_creation_result.png`) |
+| AC-01.5, AC-07.1, BR-03 | NV | PASS | макет | `REF_successful_creation_result.png`: Open, Priority Not Set |
+| AC-02.3 | PARTIAL | PASS | прототип | кожен рядок відкриває свою issue (DEF-11) |
+| US-03 кр. 1–3 | NV / PARTIAL | PASS | макет | `REF_permissions_4_contexts.png`, `S-03_lead_non_assignee.png`; серверна перевірка — реалізація |
+| AC-04.1, AC-04.2, BR-04/05, BR-06 | PARTIAL | PASS | макет | `REF_permissions_4_contexts.png` (чотири значення; Lead змінює, Member — ні) |
+| AC-06.1, AC-06.5 | NV | PASS | макет | `REF_empty_error_cases.png` (порожній comment; помилка збереження) |
+| AC-07.4 | NV | PASS | макет | `S-03_lead_non_assignee.png`, `REF_permissions_4_contexts.png` |
+| AC-07.5, BR-08 | PARTIAL | PASS | макет | `REF_status_transitions.png` (усі чотири стани) |
+| AC-08.2 | NV (прогалина даних) | PASS | прототип | ISS-107 Critical + Open у Important (`REF_important_fixtures.png`) |
+| D-03, UX-01 | PARTIAL | PASS | макет | `Not Set` / `Unassigned` замість `[ ]` |
+| D-05 | PARTIAL | PASS | макет | disabled або текстовий вигляд заборонених контролів (D-05 допускає обидва) |
+| D-07 | FAIL | PARTIAL | прототип | цільова поведінка погоджена (D-07); у прототипі `Return` → S-02-A — задокументоване обмеження Starter (DEF-14) |
+| UX-03 / DEF-12 | дефект | закрито | прототип | `Cancel` і клік по фону закривають M-01 (D-09) |
+| UX-04 | зауваження | ACCEPTED (частково) | документи + макет | у Screen Map і Contracts (DP-05) розрізнено «немає issue взагалі» (All) і «немає важливих issue» (Important). У Figma є кадр S-02-C (порожній All) і випадок 02 у `REF_empty_error_cases.png` (порожній Important, той самий S-02-C); текст повідомлення в макеті не намальовано, рекомендовані тексти демонстраційні (Q-08) |
+| UX-05 | дефект | закрито | макет | підпис `Add Comment` |
+
+### Не змінилося
+
+| Source | Результат | Причина |
+| :--- | :--- | :--- |
+| AC-06.2, AC-06.4 | PARTIAL | збереження comment і формат дати — реалізація (Q-09 відкрито) |
+| AC-07.3 | NV | збереження статусу — реалізація |
+| D-06 | NV → PARTIAL | За `REF_permissions_4_contexts.png`: вибір assignee/priority показано кнопками з негайним збереженням, `Apply` не намальовано; зміна статусу кліком по переходу відповідає D-06. Відхилення — DEF-25 (`MITIGATED`) |
+| UX-02 | ACCEPTED | кнопки переходів статусу; підпис «Change status to…» — необов'язкове покращення |
+
+### Підсумок повторної перевірки (45 перевірених пунктів частини A)
+
+| Результат | 23.10.2026 | 24.11.2026 |
+| :--- | :--- | :--- |
+| PASS | 18 | 40 |
+| PARTIAL | 15 | 4 |
+| NOT VERIFIABLE | 11 | 1 |
+| FAIL | 1 | 0 |
+
+Висновок: **UI design coverage — complete** для макета; **prototype evidence — verified** (Present, 24.11.2026); **implementation tests outstanding** — persistence, унікальність ID, серверна авторизація, серверна валідація, HTTPS, резервне копіювання, час відгуку. Загального висновку «усі AC виконано» немає: пункти рівня «реалізація» за картинкою не доводяться.
+
+---
+
+## Історія: первинний аудит 23.10.2026
 
 ## 0. Видимі Screen/State IDs і читабельність
 
@@ -192,5 +253,5 @@
 1. Повністю узгоджено та переведено в статус `APPROVED` проєктні рішення у `01_requirements/Decision_Log.md`.
 2. Оновлено `03_figma_prep/05_Figma_Brief_v1.0.md` на офіційний затверджений бриф v1.0 згідно з Додатком A.
 3. Проведено та задокументовано 10 ручних тестів T-01..T-10 у `05_qa/Test_Cases_T01_T10.md`, включаючи мінітест з одногрупником.
-4. Після ревью викладача реєстр `05_qa/Defect_Change_Log.md` оновлено: DEF-10, DEF-11, DEF-13, UX-01, UX-05 виправлено у Figma (24.11.2026) і підтверджено в Present; додано DEF-17…24, з яких відкритим лишається DEF-24 (посилання на прототип).
+4. Після ревью викладача реєстр `05_qa/Defect_Change_Log.md` оновлено: DEF-10, DEF-11, DEF-13, UX-01, UX-05 виправлено у Figma (24.11.2026) і підтверджено в Present; додано DEF-17…24, усі закриті, включно з DEF-24 (посилання на прототип).
 5. Усунено суперечності в `05_qa/AI_Interaction_Log.md` щодо назви інструмента аудиту (ChatGPT Free / GPT-4o) та статусу проходження тестів.
