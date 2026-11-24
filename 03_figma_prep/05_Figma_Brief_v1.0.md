@@ -1,7 +1,7 @@
-# Mini Issue Tracker — approved low-fidelity design brief v1.0
+# Mini Issue Tracker — approved low-fidelity design brief v1.1 (updated 2026-11-24; v1.0 approved 2026-10-22)
 
-**Status:** APPROVED (Consolidated implementation contract based on S1 requirements and approved human decisions D-01–D-08).  
-**Source Baseline:** `SD_Spec.docx` (§1–§8), `01_Input_Pack_v1.0.md`, `Decision_Log.md` (Approved 2026-10-22).  
+**Status:** APPROVED (Consolidated implementation contract based on S1 requirements and approved human decisions D-01–D-10; D-09 and D-10 added 2026-11-24).  
+**Source Baseline:** `SD_Spec.docx` (§1–§8), `01_Input_Pack_v1.0.md`, `Decision_Log.md` (D-01–D-08 approved 2026-10-22; D-09, D-10 approved 2026-11-24).  
 **Target Environment:** Figma Design (Starter Plan, Figma Agent launcher, editable native layers).  
 
 ---
