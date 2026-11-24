@@ -1,7 +1,7 @@
 # 02 Screen Map — UX Architecture Plan (Release MVP)
 
 **Версія:** v1.0 APPROVED  
-**Статус:** ЗАТВЕРДЖЕНО (Контроль B пройдено, узгоджено з Decision Log D-01–D-08)  
+**Статус:** ЗАТВЕРДЖЕНО (Контроль B пройдено, узгоджено з Decision Log D-01–D-10)  
 **UX-архітектор:** Бєлікова Марина (NureBielikovaMaryna)  
 **Дата:** 2026-10-22
 

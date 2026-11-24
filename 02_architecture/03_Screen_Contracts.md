@@ -1,7 +1,7 @@
 # 03 Screen Contracts — Developer-Verifiable Screen Contracts
 
 **Версія:** v1.0 APPROVED  
-**База:** SD_Spec.docx, Release MVP US-01–US-08, затверджений Decision Log (D-01–D-08)  
+**База:** SD_Spec.docx, Release MVP US-01–US-08, затверджений Decision Log (D-01–D-10)  
 **Статус:** ЗАТВЕРДЖЕНО (Контроль B пройдено)  
 **UX-архітектор:** Бєлікова Марина (NureBielikovaMaryna)  
 **Дата:** 2026-10-22
@@ -10,7 +10,7 @@
 
 Mini Issue Tracker — Developer-Verifiable Screen Contracts
 
-Версія: v1.0 APPROVED · База: SD_Spec.docx, Release MVP US-01–US-08, затверджений Decision Log (D-01–D-08) та UX Architecture Plan · Статус: ЗАТВЕРДЖЕНО (Контроль B пройдено)
+Версія: v1.0 APPROVED · База: SD_Spec.docx, Release MVP US-01–US-08, затверджений Decision Log (D-01–D-10) та UX Architecture Plan · Статус: ЗАТВЕРДЖЕНО (Контроль B пройдено)
 
 Цей документ перетворює погоджений за структурою UX-план на перевірювані контракти для розробника й QA. Він не додає продуктових вимог. Якщо джерело не визначає текст помилки, формат дати, спосіб повернення або іншу поведінку, це позначено як невирішене питання чи PROPOSED D-ID, а не як SOURCE.
 
