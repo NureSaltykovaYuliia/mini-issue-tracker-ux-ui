@@ -20,10 +20,11 @@
   - 12:08 Зв'язки прототипу, експорт, аудит G6, T-09 — Ходус Данило
   - 13:27 Підсумки та межі перевіреного — Кузнецов Герман
 - 💬 **Чат з ChatGPT (промпти G1–G5 та відповіді):** [Mini Issue Tracker — UX/UI Design Input Pack](https://chatgpt.com/share/6aeddc09-ec1c-83ed-9e23-cc18f325080c)
+- ▶️ **Клікабельний прототип (Figma, відкривати саме його; перегляд без входу):** [Відкрити прототип](https://www.figma.com/proto/OFbkJ1FsixY8G3CYzEsEsH/Mini-Issue-Tracker-UX-UI?node-id=3-5130&starting-point-node-id=3%3A5130&scaling=scale-down)
+  *Важливо: у посиланні на дизайн (`/design/`) без входу в акаунт Figma стрілок переходів не видно — це обмеження Figma. Щоб клікати по макету й бачити переходи, відкривайте посилання на прототип вище.*
 - 🎨 **Робочий Figma-проєкт (Design & Prototype):**  
   [Figma File: Mini Issue Tracker UX/UI](https://www.figma.com/design/OFbkJ1FsixY8G3CYzEsEsH/Mini-Issue-Tracker-UX-UI)  
   *(Надано права перегляду «Can view»; робоча сторінка: `Page 1`; стартова точка прототипу: `Issues flow` на `S-02-A`)*.
-- ▶️ **Клікабельний прототип (Figma, перегляд без входу):** [Відкрити прототип](https://www.figma.com/proto/OFbkJ1FsixY8G3CYzEsEsH/Mini-Issue-Tracker-UX-UI?node-id=3-5130&starting-point-node-id=3%3A5130&scaling=scale-down)
 - 📦 **Локальний бекап макетів до правок:** `04_design/BEFORE_REVIEW.fig`
 - 📸 **Експортовані скріншоти (2x PNG):** `04_design/screenshots/`
 
@@ -44,7 +45,7 @@
 ## 🚀 Інструкція з перевірки та тестування
 
 1. **Перегляд документації:** Перевірте артефакти у папках `01_requirements/`–`05_qa/`.
-2. **Запуск прототипу:** Відкрийте [Figma-проєкт](https://www.figma.com/design/OFbkJ1FsixY8G3CYzEsEsH/Mini-Issue-Tracker-UX-UI) і натисніть **Present (▶)** у правому верхньому куті. Переходи між екранами задано у вкладці **Prototype** (flow «Issues flow», старт — `S-02-A`). Зручніше відкривати окреме посилання на прототип (Share → Prototype).
+2. **Запуск прототипу:** Відкрийте [клікабельний прототип](https://www.figma.com/proto/OFbkJ1FsixY8G3CYzEsEsH/Mini-Issue-Tracker-UX-UI?node-id=3-5130&starting-point-node-id=3%3A5130&scaling=scale-down) (працює без входу) або [Figma-проєкт](https://www.figma.com/design/OFbkJ1FsixY8G3CYzEsEsH/Mini-Issue-Tracker-UX-UI) і натисніть **Present (▶)** у правому верхньому куті. Переходи між екранами задано у вкладці **Prototype** (flow «Issues flow», старт — `S-02-A`). Зручніше відкривати окреме посилання на прототип (Share → Prototype).
 3. **Проходження сценаріїв:**
    - Натисніть таб **Important** для переходу на фільтрований список `S-02-B`.
    - Натисніть кнопку **+ Create Issue** для відкриття модального вікна `M-01`.
@@ -79,6 +80,4 @@ mini-issue-tracker-ux-ui/
 
 ---
 
-## Стан після зауважень викладача
 
-Зауваження з автоматичного ревью враховано в документах: журнал виправлень узгоджено з контрактами, ідентифікатори рішень розділено (D-xx у `Decision_Log.md`, DP-xx у `03_Screen_Contracts.md`), тести переписано за вимогами методички. У Figma-макеті виправлено результат `Create` (відкривається нова issue ISS-106), кожен рядок списку відкриває свою issue, додано приклад Critical + Open (ISS-107) у Important, замінено плейсхолдери й застарілі примітки, експортовано reference-кадри як докази. Повторну перевірку T-01…T-10 виконано 24.11.2026 (результати — у `05_qa/Test_Cases_T01_T10.md`). Усі дефекти реєстру закриті (`05_qa/Defect_Change_Log.md`); рішення D-09 і D-10 затверджено командою (`Decision_Log.md`, 2026-11-24).
