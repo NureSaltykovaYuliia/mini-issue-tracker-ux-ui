@@ -49,7 +49,7 @@ Show ID, Title, Description, Status, Priority, Assignee, Author, Created at. Una
 
 Keep Assignee, Priority and Status controls together without a decorative “Control Actions Area” heading. Do not duplicate editable and read-only versions of the same value unnecessarily. Canonical examples: Lead viewing unassigned ISS-103 — assignment and priority enabled, each with an Apply action (`Reference · Permissions and controls`); Lead who is not the assignee viewing ISS-105 — status controls disabled (`S-03 · Team Lead non-assignee`).
 
-Only Lead can assign/reassign one team member and set/change priority [US-03; BR-06; D-04]. Member controls are disabled [D-05]. Selection is applied with an Apply action adjacent to that control; the visible result remains on S-03 [D-06].
+Only Lead can assign one team member and set/change priority [US-03; BR-06]. Reassignment is an additional team-approved feature [D-04], not a source requirement; unassign is not defined [Q-04]. Member controls are disabled [D-05]. Selection is applied with an Apply action adjacent to that control; the visible result remains on S-03 [D-06].
 
 Priority display: Not Set, Low, Normal, High, Critical. Selectable levels: Low, Normal, High, Critical only. Not Set represents absence, not a selectable level or a reset action [BR-04/05; D-03].
 
