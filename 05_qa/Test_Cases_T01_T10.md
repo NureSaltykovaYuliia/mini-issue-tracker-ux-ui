@@ -45,7 +45,7 @@ S-01 → S-02 переходу немає навмисно (D-02: демо по�
 | **T-06**<br>Lead restriction<br>AC-07.4; BR-08 | Team Lead, що не є assignee, не має активного керування статусом | **М:** `S-03_lead_non_assignee.png`: контекст Team Lead non-assignee, статус Open без контролів переходу; матриця (`REF_permissions_4_contexts.png`) і випадок 07 (`REF_empty_error_cases.png`, «Only the assignee can change the status.») | **PASS** | — |
 | **T-07**<br>Comments<br>AC-06.1–06.5 | Збережений коментар має author і date/time; порожній коментар не створюється; невдале збереження показує помилку й не створює коментар | **М:** `S-03_issue_details.png`: збережений коментар «Team Member A · 2026-10-23 14:20»; `REF_empty_error_cases.png`: випадок 05 (порожнє поле, коментар не створюється), випадок 06 («Comment was not saved. Try again.», коментаря немає) | **PASS** | — |
 | **T-08**<br>Important<br>AC-08.1–08.4; BR-09.1 | У Important лише High/Critical зі status ≠ Closed (зокрема High+Resolved і Critical+Open); Closed, Low, Normal, Not Set відсутні; набір даних відрізняє правильне правило від хибного | **П:** у Present вкладка Important показує ISS-101 (High, Resolved) і ISS-107 (Critical, Open); ISS-102 (Critical, Closed), ISS-103 (Not Set), ISS-104 (Normal), ISS-105 (Low) відсутні (`S-02-B_important_list.png`, `REF_important_fixtures.png`) | **PASS** | — |
-| **T-09**<br>Navigation<br>AC-02.3; D-07; §17 | Відкрити issue → її деталі; Return → список; Cancel/backdrop закриває M-01 без створення; дані на S-03 збігаються з вибраною issue | **П:** у Present: список → ISS-104 (дані ISS-104) → Return → список; Create Issue → M-01 → Create → ISS-106; Important → ISS-107 (дані ISS-107). Cancel і backdrop підключено до `Close overlay` (перевірено в Present 23.10.2026 і за prototype connections). Return завжди веде на S-02-A (обмеження, дозволене D-07) | **PASS** (з обмеженням D-07) | — |
+| **T-09**<br>Navigation<br>AC-02.3; D-07; §17 | Відкрити issue → її деталі; Return → список; Cancel/backdrop закриває M-01 без створення; дані на S-03 збігаються з вибраною issue | **П:** у Present: список → ISS-104 (дані ISS-104) → Return → список; Create Issue → M-01 → Create → ISS-106; Important → ISS-107 (дані ISS-107). Cancel і backdrop підключено до `Close overlay` (перевірено в Present 23.10.2026 і за prototype connections). Return завжди веде на S-02-A (обмеження, дозволене D-07) | **PASS** (відкриття issue, Cancel/backdrop, дані збігаються); **PARTIAL** (повернення до *попереднього* списку: Return завжди веде на S-02-A, обмеження прототипу, DEF-14) | Окремі стани S-03 за походженням (необов'язково) |
 | **T-10**<br>Scope<br>§8, §11 Brief | Немає delete, attachments, AI, історії змін, search, sorting, pagination, bulk і row selection, декоративних елементів | **М:** огляд 11 експортованих кадрів у `04_design/screenshots/`: заборонених функцій немає; плейсхолдерів `[ ]`, `[action]`, `[timestamp]` у продуктових екранах немає | **PASS** | — |
 
 ---
@@ -69,11 +69,30 @@ S-01 → S-02 переходу немає навмисно (D-02: демо по�
 | Статус | Тести |
 | :--- | :--- |
 | PASS (прототип + макет) | T-01, T-08 |
-| PASS (прототип) | T-09 (Return веде до S-02-A: обмеження D-07, DEF-14) |
+| PASS (прототип) / PARTIAL (збереження контексту) | T-09: відкриття, Cancel, дані — PASS; повернення до попереднього списку — PARTIAL (обмеження D-07, DEF-14) |
 | PASS (макет) | T-02, T-03, T-04, T-05, T-06, T-07, T-10 |
 | NOT VERIFIABLE (реалізація) | persistence, унікальність ID, серверна авторизація й валідація, HTTPS, резервне копіювання, час відгуку |
 | FAIL / NOT RUN | — |
 
+### Регресійна перевірка 24.11.2026
+
+Як повторно перевірено кожен тест після виправлень Figma:
+
+| Тест | Спосіб повторної перевірки 24.11.2026 | Рівень |
+| :--- | :--- | :--- |
+| T-01 | Present: Create → ISS-106 (Open, Not Set, Unassigned) | прототип |
+| T-02 | PNG `REF_empty_error_cases.png` (випадки 03–04) | макет |
+| T-03 | PNG `REF_permissions_4_contexts.png`, `S-03_lead_non_assignee.png` | макет |
+| T-04 | PNG `REF_permissions_4_contexts.png` | макет |
+| T-05 | PNG `REF_status_transitions.png` | макет |
+| T-06 | PNG `S-03_lead_non_assignee.png`, `REF_permissions_4_contexts.png` | макет |
+| T-07 | PNG `REF_empty_error_cases.png` (випадки 05–06), `S-03_issue_details.png` | макет |
+| T-08 | Present: Important → ISS-101, ISS-107 | прототип + макет |
+| T-09 | Present: рядок ISS-104, Return, Cancel | прототип |
+| T-10 | огляд експортів на відсутність зайвих функцій | макет |
+
+У Present повторно пройдено лише T-01, T-08, T-09; решту перевірено за експортами й reference-кадрами, а не інтерактивно. Реалізаційний рівень (збереження, права на сервері, серверна валідація) за макетом не доводиться.
+
 «PASS (макет)» означає, що очікуваний стан видно в кадрі або PNG; це не доводить поведінку застосунку.
 
-Перше проходження 23.10.2026 виконали Вдовенко Олег і Ходус Данило. Повторне проходження після зауважень викладача 24.11.2026 у Figma Desktop (Present) виконали Ходус Данило і Вдовенко Олег: T-01…T-10 — PASS (T-09 з обмеженням D-07). Контрольно повторено T-01, T-08, T-09: список із 6 рядків; Important лише ISS-101 і ISS-107; рядок ISS-104 відкриває свою issue, Return повертає на S-02-A; Create відкриває ISS-106; Cancel закриває M-01 без створення. Усі дефекти реєстру закриті, крім DEF-14 (`MITIGATED`, обмеження прототипу) (`05_qa/Defect_Change_Log.md`); D-09 і D-10 затверджено в `Decision_Log.md` (2026-11-24).
+Перше проходження 23.10.2026 виконали Вдовенко Олег і Ходус Данило. Повторне проходження після зауважень викладача 24.11.2026 у Figma Desktop (Present) виконали Ходус Данило і Вдовенко Олег: T-01…T-10 — PASS (T-09 з обмеженням D-07). Контрольно повторено T-01, T-08, T-09: список із 6 рядків; Important лише ISS-101 і ISS-107; рядок ISS-104 відкриває свою issue, Return повертає на S-02-A; Create відкриває ISS-106; Cancel закриває M-01 без створення. Усі дефекти реєстру усунені або задокументовані; DEF-14 і DEF-25 мають статус `MITIGATED` (обмеження прототипу та макета) (`05_qa/Defect_Change_Log.md`); D-09 і D-10 затверджено в `Decision_Log.md` (2026-11-24).

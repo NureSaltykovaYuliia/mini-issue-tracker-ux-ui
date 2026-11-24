@@ -74,7 +74,7 @@ mini-issue-tracker-ux-ui/
 │   └── screenshots/               # Експорти кадрів Figma: S-01, S-02-A/B/C, M-01, S-03, S-03 нової issue, reference-кадри REF_*
 └── 05_qa/
     ├── AI_Interaction_Log.md      # Журнал взаємодії з ChatGPT Free та Figma Agent (Додаток B2)
-    ├── Defect_Change_Log.md       # Журнал дефектів DEF-01..24 та UX-01..05; відкриті дефекти позначено OPEN
+    ├── Defect_Change_Log.md       # Журнал дефектів DEF-01..25 та UX-01..05; усі дефекти усунені або задокументовані, DEF-14 і DEF-25 мають статус MITIGATED (обмеження прототипу/макета)
     └── Test_Cases_T01_T10.md      # Протокол тестів T-01..T-10: PASS / PARTIAL / FAIL / NOT RUN за наявними доказами
 ```
 
