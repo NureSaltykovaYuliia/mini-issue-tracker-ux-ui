@@ -20,7 +20,7 @@
 | Дата повторної перевірки | 2026-11-24 |
 | Версія макета | Figma `OFbkJ1FsixY8G3CYzEsEsH` («Mini Issue Tracker UX-UI»), стан після правок DEF-10, DEF-11, DEF-13, DEF-21, DEF-22 та створення кадрів `S-03 · New issue ISS-106 (after Create)`, `S-03 · Team Lead non-assignee (ISS-105)`, `S-03 · ISS-102…107 state` |
 | Докази | 13 PNG у `04_design/screenshots/`: `S-02-A…C`, `M-01`, `S-03`, `S-03_new_issue_after_create`, `S-03_lead_non_assignee`, `REF_permissions_4_contexts`, `REF_status_transitions`, `REF_empty_error_cases`, `REF_important_fixtures`, `REF_successful_creation_result` |
-| Прототип | Прохід у Present: список із 6 рядків (ISS-101…105, ISS-107); `Important` показує лише ISS-101 і ISS-107; рядок ISS-104 відкриває свою issue; `Return` → S-02-A; `Create` → ISS-106 (Open, Not Set, Unassigned); `Cancel` закриває M-01 без створення |
+| Прототип | Прохід у Present: список із 6 рядків (ISS-101…105, ISS-107); `Important` показує лише ISS-101 і ISS-107; рядок ISS-104 відкриває свою issue; `Return` веде до списку, з якого відкрито issue (All → S-02-A, Important → S-02-B); `Create` → ISS-106 (Open, Not Set, Unassigned); `Cancel` закриває M-01 без створення |
 | Виконавці | Ролі й відповідальні — у розд. 9 `05_qa/AI_Interaction_Log.md` |
 
 ### Рівні доказу
